@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Matrix";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <form action="~/Views/Home/Matrix">
+        <!--
+        Number of Rows: <input type="text" name="inputrows"/><br/><br />
+        Number of Columns: <input type="text" name="inputcols"/><br/><br />
+        -->
+        Number of Rows: <select id="inputrows"> </select><br/><br />
+        Number of Columns: <select id="inputcols"> </select><br/><br />
+        <!--
+        <input id="btnGo" type="button" value="Go" />
+        <input id="btnReset" type="button" value="Reset" style="visibility:hidden"/>
+        -->
+        <button id="btnGo" type="button">Go</button>
+        <button id="btnPopulate" type="button">Auto Populate</button>
+    </form>
+
+    <div id="dialog-message" title="Transposed Matrix" style="background-color:aliceblue">
+        We're very excited
+    </div>
+
+    <div id="message">
+        10...9...8...7...6...5...4...3...2...1... <br /><br />
+    </div>
+
+    <form action="~/Views/Home/Matrix">
+        <div id ="matrix">
+        </div>
+    </form>
+
+
+</article>
+
+<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>
+
+@section scripts
+{
+   <script type="text/javascript" src="@Url.Content("~/Scripts/matrix.js")"></script>
+   <script type="text/javascript" src="@Url.Content("~/bundles/jqueryui")"></script>
+}
